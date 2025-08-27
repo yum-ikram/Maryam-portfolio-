@@ -1,0 +1,398 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maryam Ikram | Portfolio</title>
+  <meta name="description" content="Portfolio of Maryam Ikram — Mathematics with Data Science student and freelancer specializing in Shopify, e‑commerce, web design, graphics, and digital marketing." />
+  <meta name="author" content="Maryam Ikram" />
+  <meta property="og:title" content="Maryam Ikram — Portfolio" />
+  <meta property="og:description" content="Shopify store development, e‑commerce solutions, web design, graphics, and digital marketing." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://username.github.io" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #0f162e;
+      --text: #e9eefb;
+      --muted: #b8c1d9;
+      --accent: #7c5cff; /* primary accent */
+      --accent-2: #2dd4bf; /* teal accent */
+      --card: #121a37;
+      --border: #1f2747;
+      --shadow: 0 10px 25px rgba(0,0,0,.35);
+    }
+    [data-theme="light"]{
+      --bg: #f7f8fc;
+      --panel: #ffffff;
+      --text: #0e1428;
+      --muted: #4b587c;
+      --accent: #5b4bff;
+      --accent-2: #0ea5a3;
+      --card: #ffffff;
+      --border: #e6e9f4;
+      --shadow: 0 12px 28px rgba(12, 18, 40, .08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}/* Layout */
+.container{width:min(1120px, 92%); margin:0 auto}
+header{
+  position:sticky; top:0; z-index:50; backdrop-filter: saturate(180%) blur(10px);
+  background: color-mix(in oklab, var(--bg) 90%, transparent);
+  border-bottom: 1px solid var(--border);
+}
+.nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+.brand{display:flex; align-items:center; gap:10px; font-weight:700}
+.brand .dot{width:10px; height:10px; border-radius:50%; background:linear-gradient(135deg,var(--accent),var(--accent-2)); box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent)}
+.nav-links{display:flex; gap:20px}
+.nav-links a{padding:8px 12px; border-radius:10px; border:1px solid transparent}
+.nav-links a:hover{border-color:var(--border); background: color-mix(in oklab, var(--panel) 85%, transparent)}
+.nav-actions{display:flex; align-items:center; gap:10px}
+.btn{display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:12px; border:1px solid var(--border); background:var(--panel); box-shadow: var(--shadow); cursor:pointer}
+.btn.primary{background:linear-gradient(135deg, var(--accent), var(--accent-2)); border:none; color:#fff}
+.btn.ghost{background:transparent; box-shadow:none}
+
+/* Hero */
+.hero{padding:64px 0 40px}
+.hero-grid{display:grid; grid-template-columns:1.2fr .8fr; gap:32px; align-items:center}
+.kicker{display:inline-flex; gap:8px; align-items:center; font-size:12px; color:var(--muted); letter-spacing:.12em; text-transform:uppercase}
+.kicker .pill{padding:2px 8px; border:1px solid var(--border); border-radius:999px}
+h1{font-size: clamp(28px, 4.5vw, 46px); line-height:1.15; margin:10px 0 12px}
+.sub{font-size: clamp(14px, 2.2vw, 18px); color:var(--muted); max-width:60ch}
+.cta{display:flex; gap:12px; margin-top:18px; flex-wrap:wrap}
+.card{
+  background:var(--card); border:1px solid var(--border); border-radius:18px; padding:18px; box-shadow: var(--shadow);
+}
+
+/* Sections */
+section{padding:48px 0}
+.section-title{display:flex; align-items:center; justify-content:space-between; margin-bottom:18px}
+.section-title h2{font-size: clamp(22px, 3.5vw, 32px); margin:0}
+.muted{color:var(--muted)}
+
+/* Grids */
+.grid{display:grid; gap:18px}
+.grid.skills{grid-template-columns: repeat(2, 1fr)}
+.grid.services{grid-template-columns: repeat(3, 1fr)}
+.grid.projects{grid-template-columns: repeat(2, 1fr)}
+
+.skill, .service, .project{border:1px solid var(--border); border-radius:16px; padding:16px; background:var(--panel); transition: transform .2s ease, box-shadow .2s ease}
+.skill:hover, .service:hover, .project:hover{transform: translateY(-3px); box-shadow: var(--shadow)}
+.badge{display:inline-block; font-size:12px; padding:6px 10px; border-radius:999px; border:1px solid var(--border); background:color-mix(in oklab, var(--panel) 88%, transparent)}
+
+.why-list{display:grid; gap:12px}
+.why-item{display:flex; gap:12px; align-items:flex-start; padding:12px 14px; border:1px dashed var(--border); border-radius:14px; background:color-mix(in oklab, var(--panel) 92%, transparent)}
+
+/* Footer */
+footer{padding:28px 0 60px; border-top:1px solid var(--border); color:var(--muted)}
+
+/* Responsive */
+@media (max-width: 960px){
+  .hero-grid{grid-template-columns:1fr}
+  .grid.services{grid-template-columns: repeat(2, 1fr)}
+  .grid.projects{grid-template-columns:1fr}
+}
+@media (max-width: 640px){
+  .nav-links{display:none}
+  .grid.skills{grid-template-columns: 1fr}
+  .grid.services{grid-template-columns: 1fr}
+}
+
+/* Animations */
+.reveal{opacity:0; transform: translateY(14px); transition: all .6s ease}
+.reveal.show{opacity:1; transform:none}
+
+/* Simple icon styles */
+.icon{width:18px; height:18px; display:inline-block}
+.link{display:inline-flex; align-items:center; gap:8px}
+.project a.title{font-weight:600; display:inline-flex; align-items:center; gap:8px}
+.project .meta{font-size:13px; color:var(--muted)}
+
+/* Toast */
+.toast{position:fixed; bottom:18px; right:18px; padding:12px 14px; background:var(--panel); border:1px solid var(--border); border-radius:12px; box-shadow:var(--shadow); display:none}
+
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Maryam Ikram",
+    "description": "Freelancer: Shopify, e‑commerce, web design, graphics, digital marketing.",
+    "email": "mailto:maryamikram1067@gmail.com",
+    "url": "https://username.github.io",
+    "sameAs": [
+      "https://www.instagram.com/maryam___1067",
+      "https://www.linkedin.com/in/maryamikram"
+    ],
+    "knowsAbout": ["Shopify", "Dropshipping", "WordPress", "WooCommerce", "Graphic Design", "Digital Marketing"]
+  }
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <span class="dot"></span>
+        <a href="#home" aria-label="Home">Maryam Ikram</a>
+      </div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#services">Services</a>
+        <a href="#work">Featured Work</a>
+        <a href="#why">Why Me</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn ghost" id="themeToggle" aria-label="Toggle theme">🌓</button>
+        <a class="btn primary" href="#contact">Hire Me</a>
+      </div>
+    </div>
+  </header>  <!-- Hero -->  <main id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="reveal show">
+        <div class="kicker"><span class="pill">Portfolio</span><span>Mathematics with Data Science @ CIIT</span></div>
+        <h1>Hi, I’m <span style="background:linear-gradient(135deg,var(--accent),var(--accent-2)); -webkit-background-clip:text; background-clip:text; color:transparent">Maryam Ikram</span>.</h1>
+        <p class="sub">I build <strong>high‑performing online businesses</strong> by combining solid technical skills with creative problem‑solving—specializing in <strong>Shopify development</strong>, <strong>e‑commerce</strong>, <strong>web design</strong>, <strong>graphics</strong>, and <strong>digital marketing</strong>.</p>
+        <div class="cta">
+          <a class="btn primary" href="#work">View My Work</a>
+          <a class="btn" href="mailto:maryamikram1067@gmail.com">Email Me</a>
+          <a class="btn" href="https://wa.me/923077650433" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+      <div class="card reveal" aria-hidden="true">
+        <h3 style="margin:6px 0 8px">Quick Facts</h3>
+        <ul style="margin:0; padding-left:18px">
+          <li>Student: Mathematics with Data Science (CIIT)</li>
+          <li>Freelancer: Shopify & E‑commerce</li>
+          <li>Design: Branding, product images, ad creatives</li>
+          <li>Marketing: Facebook, Instagram, Google Ads</li>
+          <li>Based in Pakistan · Serving clients worldwide</li>
+        </ul>
+      </div>
+    </div>
+  </main>  <!-- About -->  <section id="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>About Me</h2>
+        <span class="muted">Who I am & how I work</span>
+      </div>
+      <div class="card reveal">
+        <p>I’m a student of <strong>Mathematics with Data Science at CIIT</strong> and a passionate freelancer specializing in building <strong>high‑performing online businesses</strong>. I combine technical skills with creative problem‑solving to help brands grow digitally.</p>
+      </div>
+    </div>
+  </section>  <!-- Skills -->  <section id="skills">
+    <div class="container">
+      <div class="section-title">
+        <h2>Skills</h2>
+        <span class="muted">Tools & capabilities</span>
+      </div>
+      <div class="grid skills">
+        <div class="skill reveal"><span class="badge">Shopify</span><p>Store development & customization</p></div>
+        <div class="skill reveal"><span class="badge">E‑commerce</span><p>Dropshipping, product setup, payment gateways</p></div>
+        <div class="skill reveal"><span class="badge">Web</span><p>Website development (WordPress, WooCommerce)</p></div>
+        <div class="skill reveal"><span class="badge">Design</span><p>Branding, product images, ad creatives</p></div>
+        <div class="skill reveal"><span class="badge">Marketing</span><p>Facebook, Instagram, and Google Ads</p></div>
+      </div>
+    </div>
+  </section>  <!-- Services -->  <section id="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>Services I Provide</h2>
+        <span class="muted">End‑to‑end e‑commerce solutions</span>
+      </div>
+      <div class="grid services">
+        <div class="service reveal">
+          <h3>Full Shopify Setup</h3>
+          <p>Professional, conversion‑ready store setup with premium design.</p>
+        </div>
+        <div class="service reveal">
+          <h3>Conversion‑Focused Websites</h3>
+          <p>High‑performance e‑commerce sites designed to sell.</p>
+        </div>
+        <div class="service reveal">
+          <h3>Logos & Store Graphics</h3>
+          <p>Logo, banners, and product designs that match your brand.</p>
+        </div>
+        <div class="service reveal">
+          <h3>Social Media Marketing</h3>
+          <p>Facebook/Instagram campaigns and content to grow reach.</p>
+        </div>
+        <div class="service reveal">
+          <h3>Ads Management</h3>
+          <p>Facebook, Instagram, and Google Ads with performance tracking.</p>
+        </div>
+        <div class="service reveal">
+          <h3>SEO Optimization</h3>
+          <p>On‑page SEO to improve visibility and drive sales.</p>
+        </div>
+      </div>
+    </div>
+  </section>  <!-- Featured Work -->  <section id="work">
+    <div class="container">
+      <div class="section-title">
+        <h2>Featured Work</h2>
+        <span class="muted">Recent stores & projects</span>
+      </div>
+      <div class="grid projects">
+        <article class="project reveal">
+          <a class="title link" href="https://www.ogjewelry.de/" target="_blank" rel="noopener">
+            <span>Store 1 — OG Jewelry (DE)</span>
+            <span aria-hidden>↗</span>
+          </a>
+          <p class="meta">Jewelry e‑commerce storefront focused on premium product presentation.</p>
+        </article>
+        <article class="project reveal">
+          <a class="title link" href="https://www.goldreserves.co.uk/" target="_blank" rel="noopener">
+            <span>Store 2 — Gold Reserves (UK)</span>
+            <span aria-hidden>↗</span>
+          </a>
+          <p class="meta">Elegant product catalog with strong trust signals and conversion flow.</p>
+        </article>
+        <article class="project reveal">
+          <a class="title link" href="https://hairextensions.co.uk" target="_blank" rel="noopener">
+            <span>Store 3 — HairExtensions.co.uk</span>
+            <span aria-hidden>↗</span>
+          </a>
+          <p class="meta">Beauty niche storefront with streamlined navigation and UX.</p>
+        </article>
+        <article class="project reveal">
+          <a class="title link" href="https://mulberryhairextensions.com" target="_blank" rel="noopener">
+            <span>Store 4 — Mulberry Hair Extensions</span>
+            <span aria-hidden>↗</span>
+          </a>
+          <p class="meta">Modern, mobile‑first store optimized for conversions.</p>
+        </article>
+      </div>
+    </div>
+  </section>  <!-- Why Me -->  <section id="why">
+    <div class="container">
+      <div class="section-title">
+        <h2>Why Work With Me?</h2>
+        <span class="muted">What makes me different</span>
+      </div>
+      <div class="why-list">
+        <div class="why-item reveal"><strong>No upfront payment on select projects</strong> — pay when satisfied.</div>
+        <div class="why-item reveal"><strong>Clean, professional, mobile‑friendly designs</strong> that convert.</div>
+        <div class="why-item reveal"><strong>Experience with international clients</strong> and real projects.</div>
+        <div class="why-item reveal"><strong>End‑to‑end solutions</strong> from design to marketing and optimization.</div>
+      </div>
+    </div>
+  </section>  <!-- Contact -->  <section id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contact</h2>
+        <span class="muted">Let’s build something great</span>
+      </div>
+      <div class="card reveal">
+        <div class="grid" style="grid-template-columns:1.2fr .8fr; gap:18px">
+          <div>
+            <p><strong>Email:</strong> <a class="link" href="mailto:maryamikram1067@gmail.com">maryamikram1067@gmail.com</a></p>
+            <p><strong>WhatsApp:</strong> <a class="link" href="https://wa.me/923077650433" target="_blank" rel="noopener">+92 307 7650433</a></p>
+            <p><strong>Instagram:</strong> <a class="link" href="https://www.instagram.com/maryam___1067?igsh=bnptN3Vxa3hvdnQ4" target="_blank" rel="noopener">@maryam___1067</a></p>
+            <p><strong>Facebook:</strong> <a class="link" href="https://www.instagram.com/maryam___1067?igsh=bnptN3Vxa3hvdnQ4" target="_blank" rel="noopener">See Instagram link</a></p>
+            <p><strong>LinkedIn:</strong> <a class="link" href="https://www.linkedin.com/in/maryamikram" target="_blank" rel="noopener">linkedin.com/in/maryamikram</a></p>
+          </div>
+          <div>
+            <form id="contactForm" onsubmit="return handleSubmit(event)" aria-label="Quick contact">
+              <label for="name">Name</label>
+              <input id="name" name="name" placeholder="Your name" required style="width:100%; padding:10px 12px; border-radius:10px; border:1px solid var(--border); background:var(--panel); color:var(--text); margin:6px 0 10px">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell me briefly about your project…" rows="4" required style="width:100%; padding:10px 12px; border-radius:10px; border:1px solid var(--border); background:var(--panel); color:var(--text); margin:6px 0 10px"></textarea>
+              <button class="btn primary" type="submit">Send via Email</button>
+            </form>
+            <small class="muted">This form opens your email to send the message.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>  <footer>
+    <div class="container">
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap">
+        <span>© <span id="year"></span> Maryam Ikram. All rights reserved.</span>
+        <div style="display:flex; gap:12px">
+          <a class="badge" href="#about">About</a>
+          <a class="badge" href="#work">Work</a>
+          <a class="badge" href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>  <div id="toast" class="toast" role="status" aria-live="polite">Copied to clipboard</div>  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme toggle (persist in localStorage)
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('theme');
+    if(savedTheme){ root.setAttribute('data-theme', savedTheme); }
+    themeToggle.addEventListener('click', () => {
+      const current = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', current === 'light' ? 'light' : '');
+      localStorage.setItem('theme', current === 'light' ? 'light' : 'dark');
+    });
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        if(id.length > 1){
+          e.preventDefault();
+          document.querySelector(id).scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){ entry.target.classList.add('show'); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Contact form -> compose email
+    function handleSubmit(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const msg = document.getElementById('message').value.trim();
+      const subject = encodeURIComponent('New Project Inquiry from ' + name);
+      const body = encodeURIComponent(msg + '\n\n— Sent from maryam.github.io contact form');
+      window.location.href = `mailto:maryamikram1067@gmail.com?subject=${subject}&body=${body}`;
+      return false;
+    }
+
+    // Utility: copy text and show toast
+    function copy(text){
+      navigator.clipboard.writeText(text).then(() => showToast('Copied to clipboard'));
+    }
+    function showToast(message){
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.style.display = 'block';
+      setTimeout(()=> toast.style.display='none', 2000);
+    }
+
+    // Optional: make phone/WhatsApp copy on long press (mobile)
+    const waLink = document.querySelector('a[href^="https://wa.me/"]');
+    let pressTimer;
+    if(waLink){
+      waLink.addEventListener('mousedown', ()=>{pressTimer=setTimeout(()=>copy('+92 307 7650433'),600)});
+      waLink.addEventListener('mouseup', ()=> clearTimeout(pressTimer));
+      waLink.addEventListener('mouseleave', ()=> clearTimeout(pressTimer));
+      waLink.addEventListener('touchstart', ()=>{pressTimer=setTimeout(()=>copy('+92 307 7650433'),600)},{passive:true});
+      waLink.addEventListener('touchend', ()=> clearTimeout(pressTimer));
+    }
+  </script></body>
+</html>
